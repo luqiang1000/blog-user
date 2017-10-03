@@ -27,9 +27,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * User 实体
- * 
- * @since 1.0.0 2017年3月5日
- * @author <a href="https://waylau.com">Way Lau</a>
+ *
  */
 @Entity // 实体
 public class User implements UserDetails, Serializable {
@@ -45,6 +43,7 @@ public class User implements UserDetails, Serializable {
 	@Column(nullable = false, length = 20) // 映射为字段，值不能为空
 	private String name;
 
+
 	@NotEmpty(message = "邮箱不能为空")
 	@Size(max=50)
 	@Email(message= "邮箱格式不对" ) 
@@ -59,7 +58,7 @@ public class User implements UserDetails, Serializable {
 	@NotEmpty(message = "密码不能为空")
 	@Size(max=100)
 	@Column(length = 100)
-	private String password; // 登录时密码
+	private String password; // 登录的密码
 	
 	@Column(length = 200)
 	private String avatar; // 头像图片地址
